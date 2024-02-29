@@ -66,7 +66,7 @@ namespace ProyectoWebDL.Controllers
         public IActionResult Editar(Libro request)
         {
             var response = _LibroServices.EditarLibro(request);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Libro");
         }
 
         [HttpDelete]
