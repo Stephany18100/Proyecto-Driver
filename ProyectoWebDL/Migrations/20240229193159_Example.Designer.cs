@@ -12,7 +12,7 @@ using ProyectoWebDL.Context;
 namespace ProyectoWebDL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240229181840_Example")]
+    [Migration("20240229193159_Example")]
     partial class Example
     {
         /// <inheritdoc />
