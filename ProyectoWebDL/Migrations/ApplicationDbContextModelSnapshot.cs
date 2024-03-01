@@ -59,6 +59,10 @@ namespace ProyectoWebDL.Migrations
                     b.Property<double?>("Precio")
                         .HasColumnType("float");
 
+                    b.Property<string>("UrlImagenPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("CodigoLibro");
 
                     b.ToTable("Libros");

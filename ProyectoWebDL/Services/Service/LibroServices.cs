@@ -60,8 +60,8 @@ namespace ProyectoWebDL.Services.Service
         {
             try
             {
-                //var urlImagen = i.Img.FileName;
-                //i.UrlImagenPath = @"Img/articulos/" + urlImagen;
+                var urlImagen = i.Img.FileName;
+                i.UrlImagenPath = @"Img/articulos/" + urlImagen;
 
                 Libro request = new Libro()
                 {
@@ -72,11 +72,11 @@ namespace ProyectoWebDL.Services.Service
                     PaisAutor = i.PaisAutor,
                     NumeroDePaginas = i.NumeroDePaginas,
                     AnioDeEdicion = i.AnioDeEdicion,
-                    Precio = i.Precio
-                    //UrlImagenPath = i.UrlImagenPath,
+                    Precio = i.Precio,
+                    UrlImagenPath = i.UrlImagenPath,
                 };
 
-                //SubirImg(urlImagen);
+                SubirImg(urlImagen);
 
                 var result = await _context.Libros.AddAsync(request);
                  _context.SaveChanges();
@@ -139,43 +139,43 @@ namespace ProyectoWebDL.Services.Service
             }
         }
 
-        //public bool SubirImg(string Img)
-        //{
-        //    bool res = false;
+        public bool SubirImg(string Img)
+        {
+            bool res = false;
 
-        //    try
-        //    {
-        //        string rutaprincipal = _webHost.WebRootPath;
-        //        var archivos = _httpContext.HttpContext.Request.Form.Files;
+            try
+            {
+                string rutaprincipal = _webHost.WebRootPath;
+                var archivos = _httpContext.HttpContext.Request.Form.Files;
 
-        //        if (archivos.Count > 0 && !string.IsNullOrEmpty(archivos[0].FileName))
-        //        {
+                if (archivos.Count > 0 && !string.IsNullOrEmpty(archivos[0].FileName))
+                {
 
-        //            var nombreArchivo = Img;
-        //            var subidas = Path.Combine(rutaprincipal, "Img", "articulos");
+                    var nombreArchivo = Img;
+                    var subidas = Path.Combine(rutaprincipal, "Img", "articulos");
 
-        //            // Asegurarse de que el directorio de destino exista
-        //            if (!Directory.Exists(subidas))
-        //            {
-        //                Directory.CreateDirectory(subidas);
-        //            }
+                    // Asegurarse de que el directorio de destino exista
+                    if (!Directory.Exists(subidas))
+                    {
+                        Directory.CreateDirectory(subidas);
+                    }
 
-        //            var rutaCompleta = Path.Combine(subidas, nombreArchivo);
+                    var rutaCompleta = Path.Combine(subidas, nombreArchivo);
 
-        //            using (var fileStream = new FileStream(rutaCompleta, FileMode.Create))
-        //            {
-        //                archivos[0].CopyTo(fileStream);
-        //                res = true;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
+                    using (var fileStream = new FileStream(rutaCompleta, FileMode.Create))
+                    {
+                        archivos[0].CopyTo(fileStream);
+                        res = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
 
-        //        Console.WriteLine($"Error al subir la imagen: {ex.Message}");
-        //    }
+                Console.WriteLine($"Error al subir la imagen: {ex.Message}");
+            }
 
-        //    return res;
-        //}
+            return res;
+        }
     }
 }

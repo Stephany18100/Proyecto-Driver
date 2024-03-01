@@ -24,7 +24,8 @@ namespace ProyectoWebDL.Migrations
                     PaisAutor = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NumeroDePaginas = table.Column<int>(type: "int", nullable: true),
                     AnioDeEdicion = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Precio = table.Column<double>(type: "float", nullable: true)
+                    Precio = table.Column<double>(type: "float", nullable: true),
+                    UrlImagenPath = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

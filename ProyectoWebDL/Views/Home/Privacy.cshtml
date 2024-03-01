@@ -10,7 +10,7 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
 
-        @* <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
 
             @foreach (var Item in Model)
@@ -20,8 +20,10 @@
                     <div class="card shadow-sm">
                         <img src="/@Html.DisplayFor(x => Item.UrlImagenPath)" class="bd-placeholder-img card-img-top" width="100%" height="225" />
                         <div class="card-body">
-                            <h5 class="card-title">@Html.DisplayFor(x => Item.Nombre )</h5>
-                            <p class="card-text"> @Html.DisplayFor(x => Item.Descripcion ) </p>
+                            <h5 class="card-title">@Html.DisplayFor(x => Item.NombreLibro )</h5>
+                            <p class="card-text"> @Html.DisplayFor(x => Item.Autor ) </p>
+                            <p class="card-text"> @Html.DisplayFor(x => Item.Precio) </p>
+
                             <a href="#" class="btn btn-primary">Go somewhere</a>
 
                         </div>
@@ -31,7 +33,7 @@
 
             }
 
-        </div> *@
+        </div>
 
 
 

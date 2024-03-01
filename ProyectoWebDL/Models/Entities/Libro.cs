@@ -15,5 +15,11 @@ namespace ProyectoWebDL.Models.Entities
         public int? NumeroDePaginas { get; set; }
         public DateTime? AnioDeEdicion { get; set; }
         public decimal? Precio { get; set; }
+
+
+        [NotMapped]
+        [Display(Name = "Imagen")]
+        public IFormFile Img { get; set; }
+        public string UrlImagenPath { get; set; }
     }
 }

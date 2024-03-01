@@ -12,7 +12,7 @@ using ProyectoWebDL.Context;
 namespace ProyectoWebDL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240229193159_Example")]
+    [Migration("20240301040127_Example")]
     partial class Example
     {
         /// <inheritdoc />
@@ -61,6 +61,10 @@ namespace ProyectoWebDL.Migrations
 
                     b.Property<double?>("Precio")
                         .HasColumnType("float");
+
+                    b.Property<string>("UrlImagenPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CodigoLibro");
 
