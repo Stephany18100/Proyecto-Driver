@@ -14,11 +14,9 @@ namespace ProyectoWebDL.Controllers
         //Constructor para el uso de base de datos
         private readonly IUsuarioServices _usuarioServices;
         //Se inicia la entrada a base de datos
-        private readonly ApplicationDbContext _context;
-        public UsuarioController(IUsuarioServices usuarioServices,ApplicationDbContext context)
+        public UsuarioController(IUsuarioServices usuarioServices)
         {
             _usuarioServices = usuarioServices;
-            _context = context;
         }
 
         [HttpGet]

@@ -1,0 +1,58 @@
+﻿@model ProyectoWebDL.Models.Entities.Prestamo
+@{
+    Layout = "_LayoutDashboard";
+}
+<div class="container-fluid">
+    <div class="col-sm-8">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar Prestamo</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="Editar" method="post">
+
+
+                    @*Id del articulo oculto*@
+
+                    <input type="hidden" asp-for="NumeroPedido" />
+
+                    <div class="form-group">
+                        <label asp-for="FKCodigoLibro" class="control-label"></label>
+                        <input asp-for="FKCodigoLibro" class="form-control" placeholder="Ingrese su nombre" required />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FKCodigoUsuario" class="control-label"></label>
+                        <input asp-for="FKCodigoUsuario" class="form-control" placeholder="Ingrese su apellido" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaSalida" class="control-label">Fecha de Nacimiento:</label>
+                        <input asp-for="FechaSalida" class="form-control" type="date" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaMaximaDevolver" class="control-label">Fecha de Nacimiento:</label>
+                        <input asp-for="FechaMaximaDevolver" class="form-control" type="date" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="FechaDevolucion" class="control-label">Fecha de Nacimiento:</label>
+                        <input asp-for="FechaDevolucion" class="form-control" type="date" />
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-person-fill"></i> Guardar</button>
+                    </div>
+
+                </form>
+                <a asp-controller="Prestamo" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

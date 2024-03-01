@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoWebDL.Context;
 using ProyectoWebDL.Services.IServices;
 using ProyectoWebDL.Services.Service;
+using static ProyectoWebDL.Services.Service.PrestamoService; //LO AGREGO LA SOLUCION DE PROBLEMAS
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Configuration.GetConnectionString("DefaultConnection")
 
 builder.Services.AddTransient<ILibroServices, LibroServices>();
 builder.Services.AddTransient<IUsuarioServices, UsuarioServices>();
+
+builder.Services.AddTransient<IPrestamoServices, PrestamoServices>();
+
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
